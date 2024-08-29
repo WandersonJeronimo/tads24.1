@@ -38,14 +38,14 @@ def create_dataframe_example(
 
     score1 = np.random.randint(50, 100, size=size)
     score2 = np.random.randint(50, 100, size=size)
-    shift = np.random.choice(['Morning', 'Afternoon', 'Evening'], size=size)
+    Turno = np.random.choice(['Morning', 'Afternoon', 'Evening'], size=size)
 
     # Creating DataFrame
     df = pd.DataFrame({
-        'Name': names,
-        'Score_1': score1,
-        'Score_2': score2,
-        'Shift': shift
+        'Nome': names,
+        'Nota_1': score1,
+        'Nota_2': score2,
+        'Turno': Turno
     })
 
     return df
