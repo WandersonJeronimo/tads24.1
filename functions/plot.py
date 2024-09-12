@@ -24,7 +24,7 @@ def plot_ts (ticker:str
         ) \
         .drop(['Adj Close', 'Volume'], axis = 1)
 
-    fig = px.line(data, x = 'Date', y = 'Close', title = f'{ticker} Closing prices over time'
+    fig = px.line(data, x = 'Date', y = 'Close', title = f'Preço de fechamento de {ticker} '
             )
 
     return fig
