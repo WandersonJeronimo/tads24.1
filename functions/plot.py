@@ -24,7 +24,11 @@ def plot_ts (ticker:str
         ) \
         .drop(['Adj Close', 'Volume'], axis = 1)
 
+    data['EMA'] = data['Close'].ewm(span = 52, adjust=False).mean()
+
     fig = px.line(data, x = 'Date', y = 'Close', title = f'Preço de fechamento de {ticker} '
             )
+    fig.add_scatter(x=data['Date'], y=data['EMA'], mode='lines', name=f'EMA ({52})', line=dict(color='orange',  width=3))
+
 
     return fig
